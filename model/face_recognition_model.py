@@ -97,7 +97,11 @@ class FaceRecognition:
 
             try:
                 face_roi = image[startY:endY, startX:endX]
-                face_encoding = face_recognition.face_encodings(face_roi)[0]
+                # Convert to RGB for face_recognition
+                rgb_face = cv2.cvtColor(face_roi, cv2.COLOR_BGR2RGB)
+                
+                # Get face encoding
+                face_encoding = face_recognition.face_encodings(rgb_face)[0]
 
                 # Compare with all known face encodings
                 distances = face_recognition.face_distance(self.known_face_encodings, face_encoding)
