@@ -1,0 +1,14 @@
+# Ignore virtual environment
+backend/venv/
+
+# Python cache
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+
+# Dataset
+Dataset
+
+# IDE specific files
+.idea/
+.vscode/
